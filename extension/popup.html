@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FakeCheck AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>FakeCheck AI</h1>
+      <p class="subtitle">Verify News Instantly</p>
+    </div>
+
+    <div class="input-section">
+      <textarea id="newsText" placeholder="Paste a news headline or article here..." rows="4"></textarea>
+      <button id="checkBtn" class="btn-primary">Check News</button>
+    </div>
+
+    <div class="settings">
+      <button id="settingsBtn" class="btn-settings">⚙️ Settings</button>
+    </div>
+
+    <div id="resultContainer" style="display: none;">
+      <div class="result-card">
+        <div class="classification">
+          <span id="classificationLabel" class="label"></span>
+          <span id="confidenceScore" class="score"></span>
+        </div>
+
+        <div class="progress-bar">
+          <div id="confidenceBar" class="bar-fill"></div>
+        </div>
+
+        <div class="explanation">
+          <h3>Analysis</h3>
+          <p id="explanation"></p>
+        </div>
+
+        <div class="community">
+          <h3>Community Score</h3>
+          <span id="communityScore" class="community-score">--</span>%
+        </div>
+
+        <div class="feedback-section">
+          <button id="correctBtn" class="btn-feedback btn-correct">
+            <span>✓</span> Correct
+          </button>
+          <button id="incorrectBtn" class="btn-feedback btn-incorrect">
+            <span>✗</span> Incorrect
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="errorContainer" style="display: none;">
+      <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <div id="loadingContainer" style="display: none;">
+      <div class="spinner"></div>
+      <p>Analyzing...</p>
+    </div>
+  </div>
+
+  <div id="settingsModal" style="display: none;" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Settings</h2>
+      <div class="setting-item">
+        <label for="apiUrl">Backend API URL:</label>
+        <input type="text" id="apiUrl" placeholder="http://localhost:5000">
+      </div>
+      <button id="saveSettingsBtn" class="btn-primary">Save Settings</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

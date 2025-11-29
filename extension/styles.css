@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  width: 400px;
+  background: #f8f9fa;
+}
+
+.container {
+  padding: 16px;
+  background: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 12px;
+}
+
+.header h1 {
+  font-size: 20px;
+  color: #1e40af;
+  margin-bottom: 4px;
+}
+
+.header .subtitle {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+textarea {
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: vertical;
+  min-height: 80px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-primary {
+  padding: 10px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-primary:active {
+  background: #1e40af;
+}
+
+.result-card {
+  background: #f0f9ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.classification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.label.true {
+  color: #16a34a;
+}
+
+.label.fake {
+  color: #dc2626;
+}
+
+.label.uncertain {
+  color: #f59e0b;
+}
+
+.score {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2563eb;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.explanation {
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.explanation h3 {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #1f2937;
+}
+
+.explanation p {
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.community {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 8px;
+  background: white;
+  border-radius: 4px;
+}
+
+.community h3 {
+  font-size: 12px;
+  color: #1f2937;
+  flex: 1;
+}
+
+.community-score {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.feedback-section {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-feedback {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-feedback:hover {
+  background: #f3f4f6;
+}
+
+.btn-correct {
+  color: #16a34a;
+  border-color: #16a34a;
+}
+
+.btn-correct.active {
+  background: #dcfce7;
+  border-color: #16a34a;
+}
+
+.btn-incorrect {
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.btn-incorrect.active {
+  background: #fee2e2;
+  border-color: #dc2626;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  border-left: 4px solid #dc2626;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 16px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loadingContainer {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.btn-settings {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.btn-settings:hover {
+  background: #e5e7eb;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+}
+
+.close {
+  float: right;
+  font-size: 18px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.setting-item {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.setting-item label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.setting-item input {
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+}
